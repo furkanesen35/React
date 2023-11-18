@@ -2,7 +2,11 @@ import React from 'react'
 
 const Slots = () => {
  return (
-  <div>Slots</div>
+  <div>
+   <h3>Try your Luck!</h3>
+   
+   <button>Pull the Lever</button>
+  </div>
  )
 }
 
