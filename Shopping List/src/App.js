@@ -5,10 +5,10 @@ import List from './components/List';
 
 function App() {
  const data = [ 
-  {item: "eggs", completed: false, quantity: 12},
-  {item: "milk", completed: true, quantity: 1},
-  {item: "chicken breast", completed: false, quantity: 4},
-  {item: "carrots", completed: true, quantity: 6},
+  {id:1, item: "eggs", completed: false, quantity: 12},
+  {id:2, item: "milk", completed: true, quantity: 1},
+  {id:3, item: "chicken breast", completed: false, quantity: 4},
+  {id:4, item: "carrots", completed: true, quantity: 6},
  ]
  return (
   <div className="App">
