@@ -13,7 +13,7 @@ function App() {
  return (
   <div className="App">
    <Header/>
-   <List items={data} />
+   <List items={data}/>
   </div>
  );
 }
