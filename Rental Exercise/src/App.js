@@ -1,4 +1,5 @@
 import './App.css';
+import Header from './components/Header';
 
 function App() {
  const properties = [
@@ -11,7 +12,7 @@ function App() {
  ]
  return (
   <div className="App">
-   qwe
+   <Header/>
   </div>
  );
 }
