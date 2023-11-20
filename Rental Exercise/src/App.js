@@ -14,7 +14,7 @@ function App() {
  return (
   <div className="App">
    <Header/>
-   <List properties={properties}/>
+   <List properties={properties} key={properties.id}/>
   </div>
  );
 }
