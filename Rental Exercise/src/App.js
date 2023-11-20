@@ -1,5 +1,6 @@
 import './App.css';
 import Header from './components/Header';
+import List from './components/List';
 
 function App() {
  const properties = [
@@ -13,6 +14,7 @@ function App() {
  return (
   <div className="App">
    <Header/>
+   <List properties={properties}/>
   </div>
  );
 }
