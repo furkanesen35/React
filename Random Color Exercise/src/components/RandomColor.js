@@ -1,9 +1,11 @@
 import React from 'react'
 
-const RandomColor = () => {
+const RandomColor = ({colors}) => {
  return (
   <div>
-   asd
+   {colors.map((color) => {
+    return <p>{color}</p>
+   })}
   </div>
  )
 }
