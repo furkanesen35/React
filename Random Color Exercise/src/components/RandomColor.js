@@ -1,11 +1,15 @@
 import React, { useState } from 'react'
 import "./RandomColor.css"
 
+const randomChoice = (arr) => {
+ const idx = Math.floor(Math.random() * arr.length)
+ return arr[idx]
+}
+
 const RandomColor = ({ colors }) => {
- const [color, setColor] = useState("purple")
+ const [color, setColor] = useState(randomChoice(colors))
  const handleClick = () => {
-  let rndm = Math.floor(Math.random() * 16)
-  setColor(colors[rndm])
+  setColor(randomChoice(colors))
  }
  return (
   <div
