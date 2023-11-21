@@ -1,11 +1,10 @@
 import React from 'react'
+import "./RandomColor.css"
 
-const RandomColor = ({colors}) => {
+const RandomColor = ({ colors }) => {
  return (
-  <div>
-   {colors.map((color) => {
-    return <p>{color}</p>
-   })}
+  <div className='ColorBox' style={{ backgroundColor: "red" }}>
+
   </div>
  )
 }
