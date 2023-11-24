@@ -1,13 +1,25 @@
-import React from 'react'
-import EachOne from './EachOne'
+import React, { useState } from 'react'
 
 const Player = (props) => {
- const arr = new Array(props.numOfPlayers).fill(0)
+ const [scores, setScores] = useState(new Array(props.numOfPlayers).fill(0))
+ const incrementScore = (idx) => {
+  setScores(prevScores => {
+   const copy = [...prevScores]
+   copy[idx] += 1
+   return copy
+  })
+ }
+ const reset = () => {
+  setScores(new Array(props.numOfPlayers).fill(0))
+ }
  return (
-  <div className='container'>
-   {arr.map((i,index) => {
-    return <EachOne key={index} winCond={props.winCond} q={index+1} />
+  <div>
+   {scores.map((score,idx) => {
+    return <p key={idx}>Player {idx+1}: {score} <span>  </span>
+     {(props.winCond === score && <span> Winner</span>)}
+     <button onClick={()=>incrementScore(idx)}>+1</button></p>
    })}
+   <button onClick={reset}>Reset</button>
   </div>
  )
 }
