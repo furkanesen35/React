@@ -1,14 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const Player = () => {
- const [score, setScore] = useState(0)
- const handleClick = () => {
-  setScore(score+1)
- }
+const Player = (props) => {
+ const arr = new Array(props.numOfPlayers).fil(0)
  return (
   <div className='container'>
-   <span>Player 1: {score}</span>
-   <button onClick={handleClick}>+1</button>
   </div>
  )
 }
