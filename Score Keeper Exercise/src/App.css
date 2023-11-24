@@ -45,3 +45,7 @@ body {
 .container {
   padding: 20px;
 }
+
+.container span{
+  padding: 20px;
+}
