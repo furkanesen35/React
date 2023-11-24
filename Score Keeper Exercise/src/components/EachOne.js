@@ -5,6 +5,8 @@ const EachOne = (props) => {
  return (
   <div>
    Player {props.q}: {score}
+   <button onClick={()=>setScore(score+1)}>+1</button>
+   {score === props.winCond && ( <span>Winner</span>)}
   </div>
  )
 }
