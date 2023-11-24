@@ -6,7 +6,7 @@ function App() {
  return (
   <div className="App">
    <Header/>
-   <Player numOfPlayers={4} winCond={10}/>
+   <Player numOfPlayers={5} winCond={10}/>
   </div>
  );
 }
