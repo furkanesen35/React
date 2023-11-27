@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Form = () => {
+const Form = ({addItems}) => {
  const [formData, setFormData] = useState({ product:"", quantity:"" })
  const handleChange = (e) => {
   const changedField = e.target.name
@@ -10,10 +10,13 @@ const Form = () => {
    return {...currData}
   })
  }
- console.log(formData);
+ const handleSubmit = (e) => {
+  e.preventDefault()
+  addItems(formData)
+ }
  return (
   <div>
-   <form action="">
+   <form action="" onSubmit={handleSubmit}>
     <label htmlFor="product">Product: </label>
     <input
       type="text"
