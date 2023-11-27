@@ -13,6 +13,7 @@ const Form = ({addItems}) => {
  const handleSubmit = (e) => {
   e.preventDefault()
   addItems(formData)
+  setFormData({ product:"", quantity:"" })
  }
  return (
   <div>
@@ -24,6 +25,7 @@ const Form = ({addItems}) => {
       id='product'
       value={formData.product}
       onChange={handleChange}
+      required
     />
     <label htmlFor="quantity">Quantity: </label>
     <input
@@ -32,6 +34,7 @@ const Form = ({addItems}) => {
       id='quantity'
       value={formData.quantity}
       onChange={handleChange}
+      required
     />
     <button>Submit</button>
    </form>

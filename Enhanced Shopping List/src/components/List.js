@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import Form from './Form'
+import { v4 as uuid } from "uuid"
 
 const List = () => {
  const [items, setItems] = useState([
-  {id:1, product:"bananas", quantity:8},
-  {id:2, product:"eggs", quantity:12},
+  {id:uuid(), product:"bananas", quantity:8},
+  {id:uuid(), product:"eggs", quantity:12},
  ])
  const addItems = (item) => {
   setItems((items) => {
-   return [...items, {...item, id:9}]
+   return [...items, {...item, id:uuid()}]
   })
  }
  return (
