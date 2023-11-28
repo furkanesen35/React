@@ -1,16 +1,16 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import List from '@mui/material/List';
 import TodoItem from './TodoItem';
 import TodoForm from './TodoForm';
 
-const initialTodos = [
- {id: 1, text:"walk the dog", completed: false},
- {id: 2, text:"walk the cat", completed: false},
- {id: 3, text:"do the dishes", completed: true},
-]
+const getInitialTodos = () => {
+  const data = JSON.parse(localStorage.getItem("todos"))
+  if (!data) return []
+  return data
+}
 
 export default function TodoList () {
- const [todos, setTodos] = useState(initialTodos)
+ const [todos, setTodos] = useState(getInitialTodos)
  const removeTodo = (id) => {
   setTodos(prevTodos => {
    return prevTodos.filter(t => t.id !== id)
@@ -29,16 +29,19 @@ export default function TodoList () {
  }
  const addTodo = (text) => {
   setTodos(prevTodos => {
-   return [...prevTodos, {text:text, id: 8, completed:false}]
+   return [...prevTodos, {text:text, id: crypto.randomUUID(), completed:false}]
   })
  }
+ useEffect(() => {
+  localStorage.setItem("todos", JSON.stringify(todos))
+ }, [todos])
  return (
   <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
    {todos.map((todo) => {
     return (
      <TodoItem 
        todo={todo} 
-       key={todo} 
+       key={todo.id} 
        removeTodo={() => removeTodo(todo.id)}
        toggleTodo={() => toggleTodo(todo.id)}
      />)
