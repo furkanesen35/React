@@ -4,7 +4,7 @@ import LowerScreen from './LowerScreen'
 
 const Screen = () => {
  return (
-  <div className='flex flex-col bg-black w-[400px] h-[180px] text-white rounded-[30px] p-[15px]'>
+  <div className='flex flex-col bg-black w-full h-[180px] text-white rounded-[30px] p-[15px]'>
    <UpperScreen/>
    <LowerScreen/>
   </div>
