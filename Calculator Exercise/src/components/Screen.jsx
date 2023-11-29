@@ -1,8 +1,13 @@
 import React from 'react'
+import UpperScreen from './UpperScreen'
+import LowerScreen from './LowerScreen'
 
 const Screen = () => {
  return (
-  <div className='bg-black w-[550px] h-[180px] text-white' >Screen</div>
+  <div className='flex flex-col bg-black w-[550px] h-[180px] text-white rounded-[30px] p-[15px]'>
+   <UpperScreen/>
+   <LowerScreen/>
+  </div>
  )
 }
 

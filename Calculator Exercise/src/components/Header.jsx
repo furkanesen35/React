@@ -2,7 +2,7 @@ import React from 'react'
 
 const Header = () => {
  return (
-  <div>Calculator</div>
+  <div className='text-[50px]'>Calculator</div>
  )
 }
 
