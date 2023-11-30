@@ -51,7 +51,7 @@ const Body = () => {
   console.log(lowerScreen);
  }
  return (
-  <div className="flex w-[450px] h-[675px] flex-col items-center bg-black rounded-[30px] p-[15px]">
+  <div className="flex w-[450px] h-[630px] flex-col items-center bg-black rounded-[30px] p-[15px]">
    <Screen lowerScreen={lowerScreen} upperScreen={upperScreen}/>
    <ButtonSection handleButtons={handleButtons} />
   </div>
