@@ -3,14 +3,28 @@ import Screen from './Screen'
 import ButtonSection from './ButtonSection'
 
 const Body = () => {
- const [upperScreen, setUpperScreen] = useState("")
+ const [upperScreen, setUpperScreen] = useState(0)
  const [lowerScreen, setLowerScreen] = useState(0)
  const handleButtons = (digit) => {
   if (digit === "C"){
    setLowerScreen(0)
-  } if (digit === "*") {
-   setUpperScreen(lowerScreen)
+   setUpperScreen(0)
+  } else if (digit === "+") {
+   setUpperScreen(prev => {
+    return prev + lowerScreen
+   })
    setLowerScreen(0)
+  } else if (digit === "-") {
+     if (upperScreen === 0) {
+      setUpperScreen(prev => {
+       return lowerScreen - prev
+      })
+     } else {
+      setUpperScreen(prev => {
+       return prev - lowerScreen
+      })
+     }
+     setLowerScreen(0)
   }
   setLowerScreen(prevDigits => {
    const newNum = parseInt(prevDigits + digit,10)
@@ -20,7 +34,7 @@ const Body = () => {
  }
  return (
   <div className="flex w-[450px] h-[675px] flex-col items-center bg-black rounded-[30px] p-[15px]">
-   <Screen lowerScreen={lowerScreen}/>
+   <Screen lowerScreen={lowerScreen} upperScreen={upperScreen}/>
    <ButtonSection handleButtons={handleButtons} />
   </div>
  )
