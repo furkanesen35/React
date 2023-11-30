@@ -34,6 +34,15 @@ const Body = () => {
       })
     }
     setLowerScreen(0)
+  } else if (digit === "/") {
+    if (upperScreen === 0) {
+      setUpperScreen(lowerScreen)
+    } else {
+      setUpperScreen(prev => {
+        return prev / lowerScreen
+      })
+    }
+    setLowerScreen(0)
   }
   setLowerScreen(prevDigits => {
    const newNum = parseInt(prevDigits + digit,10)
