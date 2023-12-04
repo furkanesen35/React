@@ -6,7 +6,7 @@ const Navbar = () => {
    <span className='mobile-l:hidden'>Furkan Esen's Website</span>
    <li className='list-none m-[15px] cursor-pointer'>Contact</li>
    <li className='list-none m-[15px] cursor-pointer'>About</li>
-   <li className='flex list-none bg-[#24a0ed] m-[15px] rounded-[15px] min-w-[180px] justify-center cursor-pointer'>Download Cv</li>
+   <li className='list-none m-[15px] bg-[#24a0ed] rounded-[15px] min-w-[180px] flex justify-center cursor-pointer'>Download Cv</li>
   </div>
  )
 }
